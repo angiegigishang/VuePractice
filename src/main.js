@@ -12,7 +12,7 @@ Vue.use(VueRouter)
 let router = new VueRouter({
 	mode: 'history',
 	routes: [{
-		path: '/',
+		path: '/index',
 		component: IndexPage
 	}]
 })

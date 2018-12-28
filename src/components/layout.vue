@@ -21,8 +21,7 @@
 		<div class="container">
 			<keep-alive>
 		       <router-view></router-view>
-		    </keep-alive>
-				    
+		    </keep-alive>			    
 		</div>
 		<div class="app-foot">
 			 <p>© 2016 fishenal MIT</p>

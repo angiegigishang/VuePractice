@@ -17,11 +17,11 @@
 			</div>
 			<div class="index-left-block lastest-news">
 				<h2>最新消息</h2>
-				<!-- <ul>
+				<ul>
 					<li v-for="item in newsList">
-						<a :href="item.url"></a>
+						<a :href="item.url">{{item.title}}</a>
 					</li>
-				</ul> -->
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -31,58 +31,110 @@
 export default {
 	data () {
 		return {
-		productList: {
-	        pc: {
-	          title: 'PC产品',
-	          list: [
-	            {
-	              name: '数据统计',
-	              url: 'http://starcraft.com'
-	            },
-	            {
-	              name: '数据预测',
-	              url: 'http://warcraft.com'
-	            },
-	            {
-	              name: '流量分析',
-	              url: 'http://overwatch.com',
-	              hot: true
-	            },
-	            {
-	              name: '广告发布',
-	              url: 'http://hearstone.com'
-	            }
-	          ]
-	        },
-	        app: {
-	          title: '手机应用类',
-	          last: true,
-	          list: [
-	            {
-	              name: '91助手',
-	              url: 'http://weixin.com'
-	            },
-	            {
-	              name: '产品助手',
-	              url: 'http://twitter.com',
-	              hot: true
-	            },
-	            {
-	              name: '智能地图',
-	              url: 'http://maps.com'
-	            },
-	            {
-	              name: '团队语音',
-	              url: 'http://phone.com'
-	            }
-	          ]
-	        }
-	      }	
+			newsList: [
+		            {
+		              title: '数据统计',
+		              url: 'http://starcraft.com'
+		            },
+		            {
+		              title: '数据预测',
+		              url: 'http://warcraft.com'
+		            },
+		            {
+		              title: '流量分析',
+		              url: 'http://overwatch.com'
+		            },
+		            {
+		              title: '广告发布',
+		              url: 'http://hearstone.com'
+		            }
+		         ],
+			productList: {
+		        pc: {
+		          title: 'PC产品',
+		          list: [
+		            {
+		              name: '数据统计',
+		              url: 'http://starcraft.com'
+		            },
+		            {
+		              name: '数据预测',
+		              url: 'http://warcraft.com'
+		            },
+		            {
+		              name: '流量分析',
+		              url: 'http://overwatch.com',
+		              hot: true
+		            },
+		            {
+		              name: '广告发布',
+		              url: 'http://hearstone.com'
+		            }
+		          ]
+		        },
+		        app: {
+		          title: '手机应用类',
+		          last: true,
+		          list: [
+		            {
+		              name: '91助手',
+		              url: 'http://weixin.com'
+		            },
+		            {
+		              name: '产品助手',
+		              url: 'http://twitter.com',
+		              hot: true
+		            },
+		            {
+		              name: '智能地图',
+		              url: 'http://maps.com'
+		            },
+		            {
+		              name: '团队语音',
+		              url: 'http://phone.com'
+		            }
+		          ]
+		        }
+		      }	
+			}
 		}
 	}
-}
 </script>
 
 <style lang="stylus" scoped>
-	
+	.index-wrap
+		width: 1200px
+		margin: 0 auto
+		overflow: hidden
+	.index-left
+		float: left
+		width: 300px
+		text-align: left
+	.index-left-block
+		margin: 15px
+		background: #fff
+		box-shadow: 0 0 1px #ddd
+	.index-left-block .hr 
+		margin-bottom: 20px
+		height: 1px
+		width: 100%
+		background: #ddd
+	.index-left-block h2 
+		background: #4fc08d
+		color: #fff
+		padding: 10px 15px
+		margin-bottom: 20px
+	.index-left-block h3 
+		padding: 0 15px 5px 15px
+		font-weight: bold
+		color: #222
+	.index-left-block ul
+		padding: 10px 15px
+	.index-left-block li
+		padding: 5px
+	.index-board-list
+		overflow: hidden
+	.hot-tag
+		background: red
+		color: white
 </style>

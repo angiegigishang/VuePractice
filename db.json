@@ -1,0 +1,20 @@
+{
+  "getNewsList": [
+    {
+      "title": "新闻条目1新闻条目1新闻条目1新闻条目1",
+      "url": "http://starcraft.com"
+    },
+    {
+      "title": "新闻条目2新闻条目2新闻条目2新闻条目2",
+      "url": "http://warcraft.com"
+    },
+    {
+      "title": "新闻条3新闻条3新闻条3",
+      "url": "http://overwatch.com"
+    },
+    {
+      "title": "新闻条4广告发布",
+      "url": "http://hearstone.com"
+    }
+  ]
+}

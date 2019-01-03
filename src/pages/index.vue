@@ -25,6 +25,7 @@
 			</div>
 		</div>
 		<div class="index-right">
+			<slider-show :slides="slides" :inv="invTime"></slider-show>
 			<div class="index-board-list">
 				<div class="index-board-item"
 				     v-for="(item, index) in boardList"
@@ -43,9 +44,13 @@
 </template>
 
 <script>
+import sliderShow from '../components/sliderShow'
 export default {
+	components: {
+		sliderShow
+	},
 	created: function () {
-		this.$http.get('getList')
+		this.$http.get('getNewsList')
 		.then(function (data) {
 			console.log(data)
 		}, function (err) {
@@ -54,7 +59,30 @@ export default {
 	},
 	data () {
 		return {
-			boardList: [
+			invTime: 2000,
+		      slides: [
+		        {
+		          src: require('../assets/slideShow/pic1.jpg'),
+		          title: 'xxx1',
+		          href: 'detail/analysis'
+		        },
+		        {
+		          src: require('../assets/slideShow/pic2.jpg'),
+		          title: 'xxx2',
+		          href: 'detail/count'
+		        },
+		        {
+		          src: require('../assets/slideShow/pic3.jpg'),
+		          title: 'xxx3',
+		          href: 'http://xxx.xxx.com'
+		        },
+		        {
+		          src: require('../assets/slideShow/pic4.jpg'),
+		          title: 'xxx4',
+		          href: 'detail/forecast'
+		        }
+		      ],
+					boardList: [
 			        {
 			          title: '开放产品',
 			          description: '开放产品是一款开放产品',

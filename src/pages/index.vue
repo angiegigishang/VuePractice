@@ -45,14 +45,17 @@
 
 <script>
 import sliderShow from '../components/sliderShow'
+import {baseUrl} from '../assets/ljs/env'
+
 export default {
 	components: {
 		sliderShow
 	},
 	created: function () {
-		this.$http.get('getNewsList')
+
+		this.$http.get(baseUrl + '/getNewsList')
 		.then(function (data) {
-			console.log(data)
+			this.newsList = data.body;
 		}, function (err) {
 			console.log(err)
 		})
@@ -112,24 +115,7 @@ export default {
 			          saleout: false
 			        }
 			      ],
-			newsList: [
-		            {
-		              title: '数据统计',
-		              url: 'http://starcraft.com'
-		            },
-		            {
-		              title: '数据预测',
-		              url: 'http://warcraft.com'
-		            },
-		            {
-		              title: '流量分析',
-		              url: 'http://overwatch.com'
-		            },
-		            {
-		              title: '广告发布',
-		              url: 'http://hearstone.com'
-		            }
-		         ],
+			newsList: [],
 			productList: {
 		        pc: {
 		          title: 'PC产品',

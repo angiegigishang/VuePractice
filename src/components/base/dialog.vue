@@ -64,6 +64,7 @@ export default {
 	border: 2px solid #464068
 	padding: 2%
 	line-height: 1.6
+	border-radius: 2px
 .dialog-close 
 	position: absolute
 	right: 5px

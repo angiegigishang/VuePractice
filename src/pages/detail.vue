@@ -92,7 +92,6 @@ export default {
 		background: #4fc08d
 		color: #fff
 	.product-board li a
-		display: block
-	
+		display: block	
 </style>
 

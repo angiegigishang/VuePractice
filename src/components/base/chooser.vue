@@ -50,7 +50,7 @@ export default {
 		border-radius: 3px
 		text-align: center
 		cursor: pointer
-	.chooser-list li .active
+    .active
 		border-color: #4fc08d
 		background: #4fc08d
 		color: #fff

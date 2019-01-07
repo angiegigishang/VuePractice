@@ -4,7 +4,8 @@
 			<div class="product-board">
 				<img :src="productIcon">
 				<ul>
-					<router-link v-for="item in products"
+					<router-link v-for="(item, index) in products"
+								 :key="item.id"
 					             :to="{path: item.path}"
 					             tag="li"
 					             active-class="active">
@@ -28,22 +29,26 @@ export default {
 	  	products: [
 	        {
 	          name: '数据统计',
+	          id:'1',
 	          path: '/detail/count',
 	          // icon: require('../assets/images/1.png'),
 	          active: false
 	        },
 	        {
 	          name: '数据预测',
+	          id:'2',
 	          path: '/detail/forecast',
 	          active: false
 	        },
 	        {
 	          name: '流量分析',
+	          id:'3',
 	          path: '/detail/analysis',
-	          active: false
+	          active: false,
 	        },
 	        {
 	          name: '广告发布',
+	          id:'4',
 	          path: '/detail/publish',
 	          active: false
 	        }

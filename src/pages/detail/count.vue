@@ -13,19 +13,50 @@
 					<v-chooser :selections="buyTypes"></v-chooser>
 				</div>
 			</div>
-			<div class="sales-board-line"></div>
-			<div class="sales-board-line"></div>
-			<div class="sales-board-line"></div>
+			<div class="sales-board-line">
+				<div class="sales-board-line-left">
+					使用地区:
+				</div>
+				<div class="sales-board-line-right">
+					<v-selection :selections="districts"></v-selection>
+				</div>
+			</div>
+			<div class="sales-board-line">
+				<div class="sales-board-line-left">
+					有效时间:
+				</div>
+				<div class="sales-board-line-right">
+					半年
+				</div>
+			</div>
+			<div class="sales-board-line">
+				<div class="sales-board-line-left">
+					总价:
+				</div>
+				<div class="sales-board-line-right">
+					500元
+				</div>
+			</div>
+			<div class="sales-board-line">
+				<div class="sales-board-line-left">&nbsp;</div>
+				<div class="sales-board-line-right">
+					<div class="button">
+						立即购买
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="sales-board-des"></div>
 	</div>
 </template>
 
 <script>
+import VSelection from '../../components/base/selection'
 import VChooser from '../../components/base/chooser'
 export default {
 	components: {
 		VChooser,
+		VSelection
 	},
 	data () {
 		return {
@@ -38,7 +69,33 @@ export default {
 			}, {
 				label: '紫色版',
           		value: 2
-			}]
+			}],
+			districts: [
+		        {
+		          label: '北京',
+		          value: 0
+		        },
+		        {
+		          label: '上海',
+		          value: 1
+		        },
+		        {
+		          label: '广州',
+		          value: 2
+		        },
+		        {
+		          label: '天津',
+		          value: 3
+		        },
+		        {
+		          label: '武汉',
+		          value: 4
+		        },
+		        {
+		          label: '重庆',
+		          value: 5
+		        },
+		      ]
 		}
 	}
 }

@@ -26,7 +26,8 @@
 						    :class="date[i * 7 + j] && date[i * 7 + j].status"
 						    :date="date[i * 7 + j] && date[i * 7 + j].date"
 						    >
-							{{date[i * 7 + j] && date[i * 7 + j].text}}
+						    <!-- {{i}} -->
+							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
 						</td>
 					</tr>
 				</tbody>
@@ -59,6 +60,7 @@ export default {
 		}
 	},
 	mounted () {
+		this.update();
 		console.log(this.date)
 	},
 	methods: {

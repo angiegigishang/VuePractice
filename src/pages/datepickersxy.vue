@@ -6,14 +6,14 @@
 				<thead>
 					<tr class="date-head">
 						<th colspan="4">
-							<span>&lt;</span>
-							<span>2019</span>
-							<span>&gt;</span>
+							<span class="btn-prev">&lt;</span>
+							<span class="show-year">2019</span>
+							<span class="btn-next">&gt;</span>
 						</th>
 						<th colspan="3">
-							<span>&lt;</span>
-							<span>1</span>
-							<span>&gt;</span>
+							<span class="btn-prev">&lt;</span>
+							<span class="show-month">1</span>
+							<span class="btn-next">&gt;</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -166,4 +166,12 @@ export default {
 		text-align center
 	.datetime-picker td 
 		cursor pointer
+	.datetime-picker td:hover
+		background-color: #f0f0f0
+	.datetime-picker td.date-pass, .datetime-picker td.date-future
+		color: #aaa
+	.datetime-picker td.date-active
+		background-color: #ececec
+		color: #3bb4f2
+	
 </style>

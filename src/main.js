@@ -13,6 +13,7 @@ import DetailForPage from './pages/detail/forecast'
 import DetailPubPage from './pages/detail/publish'
 import OrderListPage from './pages/orderList'
 import DatePicker from './pages/datepickersxy'
+import PerMonth from './pages/permonthsxy'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
@@ -27,6 +28,9 @@ let router = new VueRouter({
 	},{
 		path: '/datepicker',
 		component: DatePicker
+	},{
+		path: '/permonth',
+		component: PerMonth
 	},{
 		path: '/detail',
 		component: DetailPage,

@@ -88,7 +88,7 @@ export default {
 			for(var i=0; i<42; i++) {
 				//console.log(that.arr[i].text, el)
 				if(that.arr[i].text === el) {
-                    that.arr[i].text += 'guojie'
+                    that.arr[i].text += 'guo'
                    // console.log(that.arr[i].text)
 				}
 			}

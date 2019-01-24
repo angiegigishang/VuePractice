@@ -27,6 +27,7 @@
 						    @click="highlight"
 						    >
 							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
 				</tbody>
@@ -61,30 +62,42 @@ export default {
 			days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
 			months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 			date: [],
+			arr: [],
 			now: new Date() //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
 		}
 	},
 	watch: {
 		now () {
+			this.arr = []
 			this.update()
 		}
 	},
 	mounted () {
 		this.update();
-		console.log(this.date)
+		
 	},
 	methods: {
 		highlight (event) {
+			var that = this
+			var el = parseInt(event.currentTarget.innerText)
+			console.log(this.arr)
 			console.log(event.target)
-			console.log(event.currentTarget.innerText)
-			event.currentTarget.innerText += '过节'
+			
+			event.currentTarget.innerText += '节'
 			this.show = !this.show
+			for(var i=0; i<42; i++) {
+				//console.log(that.arr[i].text, el)
+				if(that.arr[i].text === el) {
+                    that.arr[i].text += 'guojie'
+                   // console.log(that.arr[i].text)
+				}
+			}
+			//console.log(event.currentTarget.innerText)
 		},
 		confirmbtn () {
 			this.show = !this.show
 		},
 		update () {
-			var arr = []
 			var time = new Date(this.now) //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
 			//time.getMonth() 当月
 			time.setMonth(time.getMonth(), 1)  //the first day:Tue Jan 01 2019 15:43:33 GMT+0800 (中国标准时间)
@@ -96,7 +109,7 @@ export default {
 			var lastDayCount = time.getDate() //31 上一年最后一天的日期
 
 			for (let i = curFirstDay; i > 0; i--) {
-				arr.push({
+				this.arr.push({
 					text: lastDayCount - i + 1,
 					time: new Date(time.getFullYear(), time.getMonth(), lastDayCount - i + 1),
 					status: 'date-pass',
@@ -112,7 +125,7 @@ export default {
 				let tmpTime = new Date(time.getFullYear(), time.getMonth(), i + 1)
 				let status = ''
 				this.stringify(tmpTime) === value && (status = 'date-active')
-				arr.push({
+				this.arr.push({
 					text: i + 1,
 					time: tmpTime,
 					status: status,
@@ -121,8 +134,8 @@ export default {
 			}
 
 			var j = 1;
-			while (arr.length < 42) {
-				arr.push({
+			while (this.arr.length < 42) {
+				this.arr.push({
 					text: j,
 					time: new Date(time.getFullYear(), time.getMonth() + 1, j),
 					status: 'date-future',
@@ -130,7 +143,7 @@ export default {
 				});
 				j++;
 			}
-			this.date = arr;
+			this.date = this.arr;
 		},
 		yearClick (flag) {
 			this.now.setFullYear(this.now.getFullYear() + flag);

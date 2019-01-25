@@ -38,14 +38,10 @@
 				<thead>
 					<tr class="date-head">
 						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
 							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
 						</th>
 						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+							<span class="show-month">{{months[now.getMonth() + 1]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -53,6 +49,7 @@
 					</tr>
 				</thead>
 				<tbody>
+					<!-- monthClick(-1) -->
 					<tr v-for="i in 5">
 						<td v-for="j in 7"
 						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
@@ -425,6 +422,7 @@ export default {
 			days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
 			months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 			date: [],
+			date2: [],
 			arr: [],
 			now: new Date() //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
 		}
@@ -436,8 +434,10 @@ export default {
 		}
 	},
 	mounted () {
-		this.update();
-		
+		//this.update();
+		this.basedata () 
+		console.log(this.date)
+		console.log(this.now.getMonth())
 	},
 	methods: {
 		highlight (event) {
@@ -451,6 +451,7 @@ export default {
 			for(var i=0; i<36; i++) {
 				//console.log(that.arr[i].text, el)
 				if(that.arr[i].text === el) {
+					console.log(that.arr[i])
                     that.arr[i].text += 'guo'
                    // console.log(that.arr[i].text)
 				}
@@ -460,8 +461,8 @@ export default {
 		confirmbtn () {
 			this.show = !this.show
 		},
-		update () {
-			var time = new Date(this.now) //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
+		update (data, monthindex) {
+			var time = new Date(data) //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
 			//time.getMonth() 当月
 			time.setMonth(time.getMonth(), 1)  //the first day:Tue Jan 01 2019 15:43:33 GMT+0800 (中国标准时间)
 			var curFirstDay = time.getDay() //星期三
@@ -506,7 +507,12 @@ export default {
 			// 	});
 			// 	j++;
 			// }
-			this.date = this.arr;
+			this.date[monthindex] = this.arr;
+		},
+		basedata () {
+            this.update(this.now, 0)
+            this.update(this.now.setMonth(1), 1)
+            //this.update(this.now.setMonth(2), 2)
 		},
 		yearClick (flag) {
 			this.now.setFullYear(this.now.getFullYear() + flag);

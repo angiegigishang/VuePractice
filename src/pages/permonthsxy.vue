@@ -422,7 +422,7 @@ export default {
 			days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
 			months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 			date: [],
-			date2: [],
+			datearr: [],
 			arr: [],
 			now: new Date() //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
 		}
@@ -437,21 +437,21 @@ export default {
 		//this.update();
 		this.basedata () 
 		console.log(this.date)
-		console.log(this.now.getMonth())
+		
 	},
 	methods: {
 		highlight (event) {
 			var that = this
 			var el = parseInt(event.currentTarget.innerText)
-			console.log(this.arr)
-			console.log(event.target)
+			//console.log(this.arr)
+			//console.log(event.target)
 			
 			event.currentTarget.innerText += '节'
 			this.show = !this.show
 			for(var i=0; i<36; i++) {
 				//console.log(that.arr[i].text, el)
 				if(that.arr[i].text === el) {
-					console.log(that.arr[i])
+					//console.log(that.arr[i])
                     that.arr[i].text += 'guo'
                    // console.log(that.arr[i].text)
 				}
@@ -485,6 +485,7 @@ export default {
 			var curDayCount = time.getDate(); //31
 			time.setDate(1) //Tue Jan 01 2019 17:30:40 GMT+0800 (中国标准时间)
 			var value = this.value || this.stringify(new Date());
+			
 			for (let i = 0; i < curDayCount; i++) {
 				let tmpTime = new Date(time.getFullYear(), time.getMonth(), i + 1)
 				let status = ''
@@ -507,11 +508,17 @@ export default {
 			// 	});
 			// 	j++;
 			// }
+			console.log('arr11', this.arr)
+			this.datearr.push(this.arr)
+			console.log('datearr', this.datearr)
 			this.date[monthindex] = this.arr;
 		},
 		basedata () {
-            this.update(this.now, 0)
-            this.update(this.now.setMonth(1), 1)
+			for (var i=0; i<2; i++){
+				this.update(this.now.setMonth(i), i)
+			}
+            //this.update(this.now,0)
+            //this.update(this.now.setMonth(1), 1)
             //this.update(this.now.setMonth(2), 2)
 		},
 		yearClick (flag) {

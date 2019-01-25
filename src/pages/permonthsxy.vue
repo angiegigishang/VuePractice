@@ -514,7 +514,7 @@ export default {
 			this.date[monthindex] = this.arr;
 		},
 		basedata () {
-			for (var i=0; i<2; i++){
+			for (var i=0; i<3; i++){
 				this.update(this.now.setMonth(i), i)
 			}
             //this.update(this.now,0)

@@ -510,6 +510,7 @@ export default {
 			// }
 			console.log('arr11', this.arr)
 			this.datearr.push(this.arr)
+			this.arr = []
 			console.log('datearr', this.datearr)
 			this.date[monthindex] = this.arr;
 		},

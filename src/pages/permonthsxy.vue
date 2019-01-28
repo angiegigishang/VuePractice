@@ -4,15 +4,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[0]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -20,7 +13,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
 						    :class="[ddatearr[(i - 1) * 7 + (j - 1)] && ddatearr[(i - 1) * 7 + (j - 1)].status]"
 						    :date="ddatearr[i * 7 + j] && ddatearr[i * 7 + j].date"
@@ -37,11 +30,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="show-year">{{now.getFullYear()}}</span>
-						</th>
-						<th colspan="3">
-							<span class="show-month">{{months[now.getMonth() + 1]}}</span>
+						<th colspan="7">
+							<span class="show-month">{{months[1]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -49,14 +39,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<!-- monthClick(-1) -->
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr1[(i - 1) * 7 + (j - 1)] && ddatearr1[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr1[i * 7 + j] && ddatearr1[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr1[(i - 1) * 7 + (j - 1)] && ddatearr1[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -67,15 +56,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[2]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -83,13 +65,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr2[(i - 1) * 7 + (j - 1)] && ddatearr2[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr2[i * 7 + j] && ddatearr2[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr2[(i - 1) * 7 + (j - 1)] && ddatearr2[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -100,15 +82,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[3]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -116,13 +91,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr3[(i - 1) * 7 + (j - 1)] && ddatearr3[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr3[i * 7 + j] && ddatearr3[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr3[(i - 1) * 7 + (j - 1)] && ddatearr3[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -133,15 +108,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[4]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -149,13 +117,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr4[(i - 1) * 7 + (j - 1)] && ddatearr4[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr4[i * 7 + j] && ddatearr4[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr4[(i - 1) * 7 + (j - 1)] && ddatearr4[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -166,15 +134,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[5]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -182,13 +143,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr5[(i - 1) * 7 + (j - 1)] && ddatearr5[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr5[i * 7 + j] && ddatearr5[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr5[(i - 1) * 7 + (j - 1)] && ddatearr5[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -199,15 +160,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[6]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -215,13 +169,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr6[(i - 1) * 7 + (j - 1)] && ddatearr6[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr6[i * 7 + j] && ddatearr6[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr6[(i - 1) * 7 + (j - 1)] && ddatearr6[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -232,15 +186,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[7]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -248,13 +195,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr7[(i - 1) * 7 + (j - 1)] && ddatearr7[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr7[i * 7 + j] && ddatearr7[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr7[(i - 1) * 7 + (j - 1)] && ddatearr7[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -265,15 +212,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[8]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -281,13 +221,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr8[(i - 1) * 7 + (j - 1)] && ddatearr8[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr8[i * 7 + j] && ddatearr8[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr8[(i - 1) * 7 + (j - 1)] && ddatearr8[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -298,15 +238,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[9]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -314,13 +247,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr9[(i - 1) * 7 + (j - 1)] && ddatearr9[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr9[i * 7 + j] && ddatearr9[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr9[(i - 1) * 7 + (j - 1)] && ddatearr9[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -331,15 +264,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[10]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -347,13 +273,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr10[(i - 1) * 7 + (j - 1)] && ddatearr10[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr10[i * 7 + j] && ddatearr10[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr10[(i - 1) * 7 + (j - 1)] && ddatearr10[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -364,15 +290,8 @@
 			<table class="date-picker">
 				<thead>
 					<tr class="date-head">
-						<th colspan="4">
-							<span class="btn-prev" @click="yearClick(-1)">&lt;</span>
-							<span class="show-year">{{now.getFullYear()}}</span>
-							<span class="btn-next" @click="yearClick(1)">&gt;</span>
-						</th>
-						<th colspan="3">
-							<span class="btn-prev" @click="monthClick(-1)">&lt;</span>
-							<span class="show-month">{{months[now.getMonth()]}}</span>
-							<span class="btn-next" @click="monthClick(1)">&gt;</span>
+						<th colspan="7">
+							<span class="show-month">{{months[11]}}</span>
 						</th>
 					</tr>
 					<tr class="date-days">
@@ -380,19 +299,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr v-for="i in 5">
+					<tr v-for="i in 6">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr11[(i - 1) * 7 + (j - 1)] && ddatearr11[(i - 1) * 7 + (j - 1)].status]"
+						    :date="ddatearr11[i * 7 + j] && ddatearr11[i * 7 + j].date"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr11[(i - 1) * 7 + (j - 1)] && ddatearr11[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
+
 		<transition name="drop">
 			<div class="alertbox" v-show="show">
 						<div class="alertbox-title">节日</div>
@@ -425,6 +345,17 @@ export default {
 			datearr: [],
 			arr: [],
 			ddatearr: [],
+			ddatearr1: [],
+			ddatearr2: [],
+			ddatearr3: [],
+			ddatearr4: [],
+			ddatearr5: [],
+			ddatearr6: [],
+			ddatearr7: [],
+			ddatearr8: [],
+			ddatearr9: [],
+			ddatearr10: [],
+			ddatearr11: [],
 			now: new Date() //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
 		}
 	},
@@ -499,28 +430,39 @@ export default {
 				})
 			}
 
-			// var j = 1;
-			// while (this.arr.length < 42) {
-			// 	this.arr.push({
-			// 		text: j,
-			// 		time: new Date(time.getFullYear(), time.getMonth() + 1, j),
-			// 		status: 'date-future',
-			// 		index: curDayCount + j + 1
-			// 	});
-			// 	j++;
-			// }
+			var j = 1;
+			while (this.arr.length < 42) {
+				this.arr.push({
+					text: '',
+					time: new Date(time.getFullYear(), time.getMonth() + 1, j),
+					status: 'date-future',
+					index: curDayCount + j + 1
+				});
+				j++;
+			}
 			//console.log('arr11', this.arr)
 			this.datearr.push(this.arr)
 			this.arr = []
 			//console.log('datearr', this.datearr)
 			//console.log('monthindex', monthindex)
 			//console.log('0', this.datearr[0])
-			this.ddatearr = this.datearr[monthindex]
+			this.ddatearr = this.datearr[0]
+			this.ddatearr1 = this.datearr[1]
+			this.ddatearr2 = this.datearr[2]
+			this.ddatearr3 = this.datearr[3]
+			this.ddatearr4 = this.datearr[4]
+			this.ddatearr5 = this.datearr[5]
+			this.ddatearr6 = this.datearr[6]
+			this.ddatearr7 = this.datearr[7]
+			this.ddatearr8 = this.datearr[8]
+			this.ddatearr9 = this.datearr[9]
+			this.ddatearr10 = this.datearr[10]
+			this.ddatearr11 = this.datearr[11]
 			console.log('测试', monthindex, this.ddatearr)
 			console.log(this.ddatearr[20].text)
 		},
 		basedata () {
-			for (var i=0; i<3; i++){
+			for (var i=0; i<12; i++){
 				this.update(this.now.setMonth(i), i)
 			}
             //this.update(this.now,0)

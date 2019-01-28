@@ -23,7 +23,7 @@
 					<tr v-for="i in 5">
 						<td v-for="j in 7"
 						    :class="[ddatearr[(i - 1) * 7 + (j - 1)] && ddatearr[(i - 1) * 7 + (j - 1)].status]"
-						    :ddatearr="ddatearr[i * 7 + j] && ddatearr[i * 7 + j]"
+						    :date="ddatearr[i * 7 + j] && ddatearr[i * 7 + j].date"
 						    @click="highlight"
 						    >
 							{{ddatearr[(i - 1) * 7 + (j - 1)] && ddatearr[(i - 1) * 7 + (j - 1)].text}}
@@ -437,7 +437,7 @@ export default {
 	mounted () {
 		//this.update();
 		this.basedata () 
-		console.log(this.date)
+		//console.log(this.date)
 		
 	},
 	methods: {
@@ -516,7 +516,7 @@ export default {
 			//console.log('monthindex', monthindex)
 			//console.log('0', this.datearr[0])
 			this.ddatearr = this.datearr[monthindex]
-			console.log('测试', monthindex, ddatearr)
+			console.log('测试', monthindex, this.ddatearr)
 			console.log(this.ddatearr[20].text)
 		},
 		basedata () {

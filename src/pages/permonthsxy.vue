@@ -338,6 +338,7 @@ export default {
 		return {
 			mark: '',
 			val: '',
+			tabval: '',
 			show: false,
 			days: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
 			months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -378,20 +379,27 @@ export default {
 			//console.log(this.arr)
 			//console.log(event.target)
 			
-			event.currentTarget.innerText += '节'
+			//event.currentTarget.innerText += '节'
+			event.currentTarget.innerText += this.tabval
+			this.val = ''
+			this.tabval = ''
 			this.show = !this.show
-			for(var i=0; i<36; i++) {
-				//console.log(that.arr[i].text, el)
-				if(that.arr[i].text === el) {
+			//console.log(that.tabval)
+			//for(var i=0; i<36; i++) {
+				//console.log(that.ddatearr[i].text, el, that.tabval)
+				//if(that.ddatearr[i].text === el) {
 					//console.log(that.arr[i])
-                    that.arr[i].text += 'guo'
+                    //that.ddatearr[i].text += 'guo'
+                    //that.ddatearr[i].text += that.tabval        
                    // console.log(that.arr[i].text)
-				}
-			}
+				//}
+			//}
+
 			//console.log(event.currentTarget.innerText)
 		},
 		confirmbtn () {
 			this.show = !this.show
+			this.tabval = this.val	
 		},
 		update (data, monthindex) {
 			var time = new Date(data) //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
@@ -458,8 +466,8 @@ export default {
 			this.ddatearr9 = this.datearr[9]
 			this.ddatearr10 = this.datearr[10]
 			this.ddatearr11 = this.datearr[11]
-			console.log('测试', monthindex, this.ddatearr)
-			console.log(this.ddatearr[20].text)
+			//console.log('测试', monthindex, this.ddatearr)
+			//console.log(this.ddatearr[20].text)
 		},
 		basedata () {
 			for (var i=0; i<12; i++){
@@ -572,12 +580,12 @@ export default {
 	}
 	.alertbox
 		position absolute
-		left 110px
-		top 140px
-		margin-left -50px
-		margin-top -50px
-		width 100px
-		height 100px
+		left 50%
+		top 50%
+		margin-left -100px
+		margin-top -100px
+		width 200px
+		height 200px
 		background pink
 		z-index 20
 	.drop-enter-active 

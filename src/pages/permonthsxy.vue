@@ -22,11 +22,11 @@
 				<tbody>
 					<tr v-for="i in 5">
 						<td v-for="j in 7"
-						    :class="[date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].status]"
-						    :date="date[i * 7 + j] && date[i * 7 + j].date"
+						    :class="[ddatearr[(i - 1) * 7 + (j - 1)] && ddatearr[(i - 1) * 7 + (j - 1)].status]"
+						    :ddatearr="ddatearr[i * 7 + j] && ddatearr[i * 7 + j]"
 						    @click="highlight"
 						    >
-							{{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].text}}
+							{{ddatearr[(i - 1) * 7 + (j - 1)] && ddatearr[(i - 1) * 7 + (j - 1)].text}}
 							<!-- {{date[(i - 1) * 7 + (j - 1)] && date[(i - 1) * 7 + (j - 1)].index}} -->
 						</td>
 					</tr>
@@ -424,6 +424,7 @@ export default {
 			date: [],
 			datearr: [],
 			arr: [],
+			ddatearr: [],
 			now: new Date() //Wed Jan 23 2019 15:43:33 GMT+0800 (中国标准时间)
 		}
 	},
@@ -508,11 +509,15 @@ export default {
 			// 	});
 			// 	j++;
 			// }
-			console.log('arr11', this.arr)
+			//console.log('arr11', this.arr)
 			this.datearr.push(this.arr)
 			this.arr = []
-			console.log('datearr', this.datearr)
-			this.date[monthindex] = this.arr;
+			//console.log('datearr', this.datearr)
+			//console.log('monthindex', monthindex)
+			//console.log('0', this.datearr[0])
+			this.ddatearr = this.datearr[monthindex]
+			console.log('测试', monthindex, ddatearr)
+			console.log(this.ddatearr[20].text)
 		},
 		basedata () {
 			for (var i=0; i<3; i++){

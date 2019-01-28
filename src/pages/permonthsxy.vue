@@ -380,21 +380,20 @@ export default {
 			//console.log(event.target)
 			
 			//event.currentTarget.innerText += '节'
-			event.currentTarget.innerText += this.tabval
+			//event.currentTarget.innerText += this.tabval
 			this.val = ''
-			this.tabval = ''
+			//this.tabval = ''
 			this.show = !this.show
 			//console.log(that.tabval)
-			//for(var i=0; i<36; i++) {
+			for(var i=0; i<36; i++) {
 				//console.log(that.ddatearr[i].text, el, that.tabval)
-				//if(that.ddatearr[i].text === el) {
-					//console.log(that.arr[i])
+				if(that.ddatearr[i].text === el) {
+					//console.log( that.ddatearr[i])
                     //that.ddatearr[i].text += 'guo'
-                    //that.ddatearr[i].text += that.tabval        
-                   // console.log(that.arr[i].text)
-				//}
-			//}
-
+                    that.ddatearr[i].text += that.tabval        
+                    console.log( that.ddatearr[i].text)
+				}
+			}
 			//console.log(event.currentTarget.innerText)
 		},
 		confirmbtn () {
